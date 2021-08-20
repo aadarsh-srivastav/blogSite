@@ -1,0 +1,24 @@
+
+<%-include("partials/header"); %> 
+<h1>Home</h1>
+<p><%=homeContent%></p>
+
+<%#  for(let i=0;i< newPost.length;i++){%>
+    <!-- <div>
+        <h2><%#newPost[i].title%></h2>
+        <p><%#newPost[i].postContent%></p>
+    </div> -->
+<%#}%>
+
+
+
+
+<%newPost.forEach(post => {  %>
+    <div id="homePage" class="container">
+    <h2><%= post.title %> </h2>  
+   <% var content=post.postContent.substring(0,100)+"...";%>
+   <p><%= content %> </p>
+  <a href="/post/<%=post.title%>">read more</a>
+</div>
+<%  });  %> 
+<%-include("partials/footer"); %>
